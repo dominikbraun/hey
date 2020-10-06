@@ -12,4 +12,5 @@ $ docker container run dominikbraun/hey
 
 ```shell script
 $ kubectl apply -f https://dominikbraun.io/hey.yml
+$ kubectl logs pod/hey
 ```
