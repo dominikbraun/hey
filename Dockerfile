@@ -6,9 +6,9 @@
 #   /_/ /_/\___/\__, /
 #              /____/
 #
-FROM alpine:3.12.0 AS base
+FROM ruby:2.7.2 AS base
 
-COPY hey.sh .
-RUN chmod +x hey.sh
+COPY hey.rb .
+CMD ["ruby", "hey.rb"]
 
-CMD ["ash", "hey.sh"]
+EXPOSE 8000

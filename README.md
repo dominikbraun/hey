@@ -5,7 +5,7 @@
 ### Run in Docker
 
 ```shell script
-$ docker container run dominikbraun/hey
+$ docker container run -p 8000:8000 dominikbraun/hey
 ```
 
 ### Run in Kubernetes
@@ -14,3 +14,7 @@ $ docker container run dominikbraun/hey
 $ kubectl apply -f https://dominikbraun.io/hey.yml
 $ kubectl logs pod/hey
 ```
+
+### Access it
+
+hey will be available at [localhost:8000](http://localhost:8000).
