@@ -3,6 +3,8 @@ kind: Pod
 metadata:
   name: hey
   namespace: default
+  labels:
+    app: hey
 spec:
   containers:
     - name: hey
@@ -10,8 +12,20 @@ spec:
       imagePullPolicy: Always
       stdin: true
       tty: true
-      env:
-        - name: HOSTIP
-          valueFrom:
-            fieldRef:
-              fieldPath: status.hostIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hey
+spec:
+  selector:
+    app: hey
+  ports:
+    - protocol: TCP
+      port: 8000
+      targetPort: 8000
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 127.0.0.1
