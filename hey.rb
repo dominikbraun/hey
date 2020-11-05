@@ -2,16 +2,16 @@ require 'socket'
 
 hey = <<-HEREDOC
 
-    __
-   / /_  ___  __  __
-  / __ \/ _ \/ / / /
- / / / /  __/ /_/ /
-/_/ /_/\___/\__, /
-           /____/
+       __                 
+      / /_  ___  __  __   
+     / __ \\/ _ \\/ / / /   
+    / / / /  __/ /_/ /    
+   /_/ /_/\\___/\\__, /     
+              /____/      
 
 HEREDOC
 
-server = TCPServer.new 5678
+server = TCPServer.new 8000
 
 while session = server.accept
   request = session.gets
