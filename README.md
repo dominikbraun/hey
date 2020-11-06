@@ -21,7 +21,6 @@ $ docker container run -p 8000:8000 dominikbraun/hey
 
 ```shell script
 $ kubectl apply -f https://dominikbraun.io/hey.yml
-$ kubectl logs pod/hey
 ```
 
 ### Access it
